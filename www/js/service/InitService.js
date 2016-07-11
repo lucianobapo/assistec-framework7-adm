@@ -30,11 +30,11 @@ MyApp.angular.factory('InitService', ['$document', function ($document) {
 
             if (document.URL.indexOf("http://") === -1 && document.URL.indexOf("https://") === -1) {
                 // Cordova
-                console.log("Using Cordova/PhoneGap setting");
+                MyApp.cLog("Using Cordova/PhoneGap setting");
                 document.addEventListener("deviceready", onReady, false);
             } else {
                 // Web browser
-                console.log("Using web browser setting");
+                MyApp.cLog("Using web browser setting");
                 onReady();
             }
 

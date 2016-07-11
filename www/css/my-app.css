@@ -1,4 +1,16 @@
 /* Your app custom files in this file */
+.smaller{
+  font-size: x-small;
+}
+.infinite-scroll-preloader {
+  margin-top:-20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.infinite-scroll-preloader .preloader {
+  width:34px;
+  height:34px;
+}
 /* Tab bar icons */
 i.tabbar-demo-icon-1 {
   width: 30px;

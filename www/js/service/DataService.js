@@ -5,7 +5,22 @@ MyApp.angular.factory('DataService', ['$document', '$http', function ($document,
     'use strict';
 
     var pub = {};
-    var eventListeners = {'ready': []};
+    var eventListeners = {
+        'supportClicked': [],
+        'ready': []
+    };
+
+    pub.addEventListener = function (eventName, listener) {
+        eventListeners[eventName].push(listener);
+    };
+
+    pub.supportClicked = function (support) {
+        //MyApp.cDebug('pub.supportClicked ', support);
+        MyApp.cDebug('eventListeners ', eventListeners);
+        for (var i = 0; i < eventListeners.supportClicked.length; i++){
+            eventListeners.supportClicked[i](support);
+        }
+    };
 
     function sendHttp(url){
         var params = {
@@ -27,24 +42,10 @@ MyApp.angular.factory('DataService', ['$document', '$http', function ($document,
         return sendHttp('http://assistec.ilhanet.com/estado');
     };
 
-    pub.getSupports = function () {
-        return sendHttp('http://assistec.ilhanet.com/servico');
+    pub.getSupports = function (url) {
+        if (url == undefined) url = 'http://assistec.ilhanet.com/servico';
+        return sendHttp(url);
     };
-
-    pub.addEventListener = function (eventName, listener) {
-        eventListeners[eventName].push(listener);
-    };
-
-    function onReady() {
-        var fw7 = MyApp.fw7,
-            i;
-
-        fw7.views.push(fw7.app.addView('.view-main', fw7.options));
-
-        for (i = 0; i < eventListeners.ready.length; i = i + 1) {
-            eventListeners.ready[i]();
-        }
-    }
 
     return pub;
 }]);

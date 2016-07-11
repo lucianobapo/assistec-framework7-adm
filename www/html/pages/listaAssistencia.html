@@ -1,0 +1,73 @@
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left sliding">
+            <a href="#" class="back link">
+                <i class="icon icon-back"></i>
+                <span>Voltar</span>
+            </a>
+        </div>
+        <div class="center sliding">Lista de Assistências</div>
+        <div class="right">
+            <a href="#" class="open-panel link icon-only">
+                <i class="icon icon-bars"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="pages navbar-through">
+    <!-- Form Page-->
+    <div id="listaAssistencia" data-page="listaAssistencia"
+         class="page cached" ng-controller="listaAssistenciaPageController">
+        <div class="page-content infinite-scroll">
+            <div class="content-block-title">Lista de Assistências</div>
+            <!-- Inset content block -->
+            <!--<div class="content-block inset" ng-repeat="support in supports">-->
+                <!--<div class="content-block-inner">-->
+                    <!--<h3>{{ support.nome }}</h3>-->
+                    <!--<p>{{ support.descricao }}</p>-->
+                    <!--<p>{{ support.endereco }}</p>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <div class="list-block tablet-inset">
+                <ul>
+                    <li class="swipeout" ng-repeat="support in supports">
+                        <div class="swipeout-content item-content">
+                            <div class="item-inner">
+                                <div class="item-title">{{ support.nome }}</div>
+                                <div class="item-after smaller"><< Mais ações</div>
+                            </div>
+
+                        </div>
+                        <div class="swipeout-actions-right">
+                            <a ng-href="html/pages/formAssistencia.html"
+                               ng-click="toEditAssistencia(support)"
+                               class="action1 bg-lightblue">Editar</a>
+                            <!-- We add data-confirm and data-confirm-title attributes -->
+                            <a href="#" class="swipeout-delete"
+                               data-confirm="Realmente deseja remover este item?"
+                               data-confirm-title="Confirma ?">Remover</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!--<div class="content-block-title">Lista de Assistências</div>-->
+            <!--<div class="list-block">-->
+                <!--<ul>-->
+                    <!--<li class="item-content" ng-repeat="support in supports">-->
+                        <!--<div class="item-inner">-->
+                            <!--<div class="item-title">{{ support.nome }}</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+            <!-- Preloader -->
+            <div class="infinite-scroll-preloader">
+                <div class="preloader"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
