@@ -22,29 +22,36 @@ MyApp.angular.factory('DataService', ['$document', '$http', function ($document,
         }
     };
 
-    function sendHttp(url){
+    function sendHttp(method, url, data){
         var params = {
             headers: {
                 //'X-Requested-With': 'XMLHttpRequest',
+                'Content-Type': 'application/json'
                 //'Accept': 'application/json'
             },
-            method: 'GET',
+            method: method,
+            data: data,
             url: url
         };
+        //MyApp.cDebug('params:', params);
         return $http(params);
     }
 
+    pub.postSupport = function (data) {
+        return sendHttp('POST', 'http://assistec.ilhanet.com/servico', data);
+    };
+
     pub.getCities = function () {
-        return sendHttp('http://assistec.ilhanet.com/cidade');
+        return sendHttp('GET', 'http://assistec.ilhanet.com/cidade');
     };
 
     pub.getStates = function () {
-        return sendHttp('http://assistec.ilhanet.com/estado');
+        return sendHttp('GET', 'http://assistec.ilhanet.com/estado');
     };
 
     pub.getSupports = function (url) {
         if (url == undefined) url = 'http://assistec.ilhanet.com/servico';
-        return sendHttp(url);
+        return sendHttp('GET', url);
     };
 
     return pub;

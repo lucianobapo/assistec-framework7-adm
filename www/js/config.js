@@ -1,5 +1,5 @@
 /*jslint browser: true*/
-/*global console, MyApp, angular, Framework7, mainView*/
+/*global console, MyApp, angular, Framework7*/
 
 // Export selectors engine
 var $$ = Dom7;
@@ -13,7 +13,7 @@ MyApp.config = {
 MyApp.sendLog = MyApp.sendLog || false ;
 MyApp.sendEventDebug = MyApp.sendEventDebug || false ;
 MyApp.sendEventLog = MyApp.sendEventLog || false ;
-MyApp.sendControllerEnter = MyApp.sendControllerEnter || false ;
+MyApp.sendControllerEnter = MyApp.sendControllerEnter || true ;
 MyApp.sendCustom1 = MyApp.sendCustom1 || false ;
 MyApp.sendCustom2 = MyApp.sendCustom2 || false ;
 MyApp.sendDebug = MyApp.sendDebug || true ;
@@ -76,6 +76,16 @@ MyApp.cErr = function() { // only emits console.log messages if app.LOG != false
 $$(document).on('DOMContentLoaded', function() {
     MyApp.fw7 = {
         app: new Framework7({
+            //precompileTemplates: true,
+            template7Pages: true, //enable Template7 rendering for pages
+            template7Data: {
+                'url:html/pages/listaAssistenciaTemplate.html':{
+                    count:'0',
+                    total:'0',
+                    supports:[]
+                }
+            },
+
             pushState: true,
             swipePanel: 'left',
             animateNavBackIcon: true
