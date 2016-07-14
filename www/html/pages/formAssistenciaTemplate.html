@@ -21,173 +21,178 @@
 
 <div class="page" data-page="formAssistenciaTemplatePage">
     <div class="page-content">
-        <div class="content-block-title">Dados da Assistência</div>
-        <div class="list-block">
-            <ul>
-                {{#unless criar}}
-                <li>
-                    <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-toggle"></i></div>
-                        <div class="item-inner">
-                            <div class="item-title label">ID</div>
-                            <div class="item-input">
-                                <input readonly type="text" id="id">
+        <div class="row">
+            <div class="col-100 tablet-50">
+                <div class="content-block-title">Dados da Assistência</div>
+                <div class="list-block tablet-inset">
+                    <ul>
+                        {{#unless criar}}
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-toggle"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">ID</div>
+                                    <div class="item-input">
+                                        <input readonly type="text" id="id">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </li>
-                {{/unless}}
-                <li>
-                    <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-name"></i></div>
-                        <div class="item-inner">
-                            <div class="item-title label">Nome</div>
-                            <div class="item-input">
-                                <input type="text" id="nome" placeholder="Nome">
+                        </li>
+                        {{/unless}}
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">Nome</div>
+                                    <div class="item-input">
+                                        <input type="text" id="nome" placeholder="Nome">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </li>
+                        </li>
 
-                <li class="align-top">
-                    <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-comment"></i></div>
-                        <div class="item-inner">
-                            <div class="item-title label">Descrição</div>
-                            <div class="item-input">
-                                <input type="text" id="descricao" placeholder="Descrição">
+                        <li class="align-top">
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-comment"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">Descrição</div>
+                                    <div class="item-input">
+                                        <input type="text" id="descricao" placeholder="Descrição">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </li>
+                        </li>
 
-                <li>
-                    <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-email"></i></div>
-                        <div class="item-inner">
-                            <div class="item-title label">E-mail</div>
-                            <div class="item-input">
-                                <input type="email" id="email" placeholder="E-mail">
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-email"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">E-mail</div>
+                                    <div class="item-input">
+                                        <input type="email" id="email" placeholder="E-mail">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </li>
+                        </li>
 
-                <li>
-                    <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-tel"></i></div>
-                        <div class="item-inner">
-                            <div class="item-title label">Telefone</div>
-                            <div class="item-input">
-                                <input type="tel" id="telefone" placeholder="Telefone">
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-tel"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">Telefone</div>
+                                    <div class="item-input">
+                                        <input type="tel" id="telefone" placeholder="Telefone">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </li>
+                        </li>
 
-                <li>
-                    <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-url"></i></div>
-                        <div class="item-inner">
-                            <div class="item-title label">Site</div>
-                            <div class="item-input">
-                                <input type="url" id="site" placeholder="Site">
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-url"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">Site</div>
+                                    <div class="item-input">
+                                        <input type="url" id="site" placeholder="Site">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </li>
+                        </li>
 
-                <li>
-                    <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-name"></i></div>
-                        <div class="item-inner">
-                            <div class="item-title label">Endereço</div>
-                            <div class="item-input">
-                                <input type="text" id="endereco" placeholder="Endereço">
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">Endereço</div>
+                                    <div class="item-input">
+                                        <input type="text" id="endereco" placeholder="Endereço">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </li>
+                        </li>
 
-                <li>
-                    <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-name"></i></div>
-                        <div class="item-inner">
-                            <div class="item-title label">Bairro</div>
-                            <div class="item-input">
-                                <input type="text" id="bairro" placeholder="Bairro">
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">Bairro</div>
+                                    <div class="item-input">
+                                        <input type="text" id="bairro" placeholder="Bairro">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-name"></i></div>
-                        <div class="item-inner">
-                            <div class="item-title label">Cidade</div>
-                            <div class="item-input">
-                                <input type="text" id="cidade" placeholder="Cidade">
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">Cidade</div>
+                                    <div class="item-input">
+                                        <input type="text" id="cidade" placeholder="Cidade">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-name"></i></div>
-                        <div class="item-inner">
-                            <div class="item-title label">Estado</div>
-                            <div class="item-input">
-                                <input type="text" id="estado" placeholder="Estado">
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">Estado</div>
+                                    <div class="item-input">
+                                        <input type="text" id="estado" placeholder="Estado">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </li>
+                        </li>
 
-                <li>
-                    <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-name"></i></div>
-                        <div class="item-inner">
-                            <div class="item-title label">CEP</div>
-                            <div class="item-input">
-                                <input type="text" id="cep" placeholder="CEP">
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">CEP</div>
+                                    <div class="item-input">
+                                        <input type="text" id="cep" placeholder="CEP">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </li>
+                        </li>
 
-                <li>
-                    <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-comment"></i></div>
-                        <div class="item-inner">
-                            <div class="item-title label">Complemento</div>
-                            <div class="item-input">
-                                <input type="text" id="complemento" placeholder="Complemento">
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-comment"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">Complemento</div>
+                                    <div class="item-input">
+                                        <input type="text" id="complemento" placeholder="Complemento">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="content-block">
-            <div class="row">
-                <div class="col-50">
-                    <a href="#"
-                       class="back link button button-big button-fill color-red">Cancelar</a>
+                        </li>
+                    </ul>
                 </div>
-                {{#if criar}}
-                    <div class="col-50">
-                        <input type="button" id="buttonCriar"
-                               onclick='MyApp.clickButtonCriar()'
-                               value="Criar" class="button button-big button-fill color-green">
+                <div class="content-block tablet-inset">
+                    <div class="row">
+                        <div class="col-50">
+                            <a href="#"
+                               class="back link button button-big button-fill color-red">Cancelar</a>
+                        </div>
+                        {{#if criar}}
+                        <div class="col-50">
+                            <input type="button" id="buttonCriar"
+                                   onclick='MyApp.clickButtonCriar()'
+                                   value="Criar" class="button button-big button-fill color-green">
+                        </div>
+                        {{else}}
+                        <div class="col-50">
+                            <input type="button" id="buttonAtualizar"
+                                   onclick='MyApp.clickButtonAtualizar()'
+                                   value="Atualizar" class="button button-big button-fill color-green">
+                        </div>
+                        {{/if}}
                     </div>
-                {{else}}
-                    <div class="col-50">
-                        <input type="button" id="buttonAtualizar"
-                               onclick='MyApp.clickButtonAtualizar()'
-                               value="Atualizar" class="button button-big button-fill color-green">
-                    </div>
-                {{/if}}
+                </div>
             </div>
         </div>
+
     </div>
 </div>
