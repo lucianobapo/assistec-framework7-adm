@@ -12,7 +12,6 @@ MyApp.angular.factory('DataService', ['$document', '$http', function ($document,
 
     pub.supportToDelete = 0;
     pub.supports = [];
-    pub.cities = [];
 
     pub.addEventListener = function (eventName, listener) {
         eventListeners[eventName].push(listener);
@@ -49,16 +48,8 @@ MyApp.angular.factory('DataService', ['$document', '$http', function ($document,
         return sendHttp('PUT', 'http://assistec.ilhanet.com/servico/'+id, data);
     };
 
-    pub.postSupport = function (data) {
+    pub.createSupport = function (data) {
         return sendHttp('POST', 'http://assistec.ilhanet.com/servico', data);
-    };
-
-    pub.getCities = function () {
-        return sendHttp('GET', 'http://assistec.ilhanet.com/cidade');
-    };
-
-    pub.getStates = function () {
-        return sendHttp('GET', 'http://assistec.ilhanet.com/estado');
     };
 
     pub.getSupports = function (url) {

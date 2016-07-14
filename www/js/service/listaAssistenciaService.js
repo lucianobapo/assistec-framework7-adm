@@ -59,6 +59,7 @@ MyApp.angular.factory('listaAssistenciaService', [
                         // Reset loading flag
                         loading = false;
                         MyApp.cErr('Request Error', err);
+                        MyApp.fw7.app.alert('Falha na requisição: '+err.statusText, 'Erro');
                     });
             });
 
@@ -71,6 +72,7 @@ MyApp.angular.factory('listaAssistenciaService', [
                         pub.loadPage();
                     }, function (err){
                         MyApp.cErr('Request Error', err);
+                        MyApp.fw7.app.alert('Falha na requisição: '+err.statusText, 'Erro');
                     });
             });
 
@@ -102,6 +104,7 @@ MyApp.angular.factory('listaAssistenciaService', [
                 });
             }, function (err){
                 MyApp.cErr('Request Error', err);
+                MyApp.fw7.app.alert('Falha na requisição: '+err.statusText, 'Erro');
             });
         };
 

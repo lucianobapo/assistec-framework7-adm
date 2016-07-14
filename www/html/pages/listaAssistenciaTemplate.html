@@ -1,7 +1,11 @@
 <div class="navbar">
     <div class="navbar-inner">
         <div class="left sliding">
-            <!--<a href="/" class="link">-->
+            <a href="#" class="back link">
+                <i class="icon icon-back"></i>
+                <span>Voltar</span>
+            </a>
+            <!--<a href="#" class="link" onclick='MyApp.clickButtonHome()'>-->
                 <!--<i class="icon icon-back"></i>-->
                 <!--<span>Home</span>-->
             <!--</a>-->
@@ -38,8 +42,8 @@
                                class="action1 bg-lightblue">Editar</a>
                             <!-- We add data-confirm and data-confirm-title attributes -->
                             <a href="#" name="{{id}}" class="swipeout-delete"
-                               data-confirm="Realmente deseja remover este item?"
-                               data-confirm-title="Confirma ?">Remover</a>
+                               data-confirm="Realmente deseja remover {{nome}}?"
+                               data-confirm-title="Atenção">Remover</a>
                         </div>
                     </li>
                 {{else}}

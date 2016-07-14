@@ -28,11 +28,54 @@ MyApp.angular.factory('formAssistenciaService', [
                         $$(page.container).find('#site').val(item.site);
                         $$(page.container).find('#endereco').val(item.endereco);
                         $$(page.container).find('#bairro').val(item.bairro);
+                        $$(page.container).find('#cidade').val(item.cidade);
+                        $$(page.container).find('#estado').val(item.estado);
                         $$(page.container).find('#cep').val(item.cep);
                         $$(page.container).find('#complemento').val(item.complemento);
                     }
                 });
             }
+
+            MyApp.validate = function () {
+                var nome = $$(page.container).find('#nome').val();
+                if (nome.length>0) return true;
+                else {
+                    MyApp.fw7.app.alert('Digite um nome válido', 'Atenção');
+                    return false;
+                }
+            };
+
+            MyApp.clickButtonCriar = function () {
+                MyApp.cLog('clickButtonCriar');
+                if (MyApp.validate()){
+                    MyApp.fw7.app.showIndicator();
+                    DataService.createSupport({
+                        nome:$$(page.container).find('#nome').val(),
+                        descricao:$$(page.container).find('#descricao').val(),
+                        email:$$(page.container).find('#email').val(),
+                        telefone:$$(page.container).find('#telefone').val(),
+                        site:$$(page.container).find('#site').val(),
+                        endereco:$$(page.container).find('#endereco').val(),
+                        bairro:$$(page.container).find('#bairro').val(),
+                        cidade:$$(page.container).find('#cidade').val(),
+                        estado:$$(page.container).find('#estado').val(),
+                        cep:$$(page.container).find('#cep').val(),
+                        complemento:$$(page.container).find('#complemento').val()
+                    }).then(function (result){
+                        MyApp.cLog('Success:', result);
+                        MyApp.fw7.app.hideIndicator();
+                        MyApp.fw7.app.alert('Registro criado ID: '+result.data.id, 'Criado', function () {
+                            //MyApp.mainView.router.refreshPage();
+                            listaAssistenciaService.loadPage();
+                        });
+                    }, function (err){
+                        // Reset loading flag
+                        MyApp.fw7.app.hideIndicator();
+                        MyApp.cErr('Request Error', err);
+                        MyApp.fw7.app.alert('Falha na requisição: '+err.statusText, 'Erro');
+                    });
+                }
+            };
 
             MyApp.clickButtonAtualizar = function () {
                 MyApp.cLog('clickButtonAtualizar');
@@ -42,7 +85,7 @@ MyApp.angular.factory('formAssistenciaService', [
                             MyApp.fw7.app.showIndicator();
                             DataService.updateSupport($$(page.container).find('#id').val(), {
                                 //id:$$(page.container).find('#id').val(),
-                                cidade_id:1,
+                                //cidade_id:1,
                                 nome:$$(page.container).find('#nome').val(),
                                 descricao:$$(page.container).find('#descricao').val(),
                                 email:$$(page.container).find('#email').val(),
@@ -50,6 +93,8 @@ MyApp.angular.factory('formAssistenciaService', [
                                 site:$$(page.container).find('#site').val(),
                                 endereco:$$(page.container).find('#endereco').val(),
                                 bairro:$$(page.container).find('#bairro').val(),
+                                cidade:$$(page.container).find('#cidade').val(),
+                                estado:$$(page.container).find('#estado').val(),
                                 cep:$$(page.container).find('#cep').val(),
                                 complemento:$$(page.container).find('#complemento').val()
                             }).then(function (result){
@@ -63,11 +108,21 @@ MyApp.angular.factory('formAssistenciaService', [
                                 // Reset loading flag
                                 MyApp.fw7.app.hideIndicator();
                                 MyApp.cErr('Request Error', err);
+                                MyApp.fw7.app.alert('Falha na requisição: '+err.statusText, 'Erro');
                             });
                         }
                     });
                 }
             };
+        };
+
+        pub.loadPage = function () {
+            MyApp.mainView.router.load({
+                url: 'html/pages/formAssistenciaTemplate.html',
+                context: {
+                    criar: true
+                }
+            });
         };
 
         return pub;
