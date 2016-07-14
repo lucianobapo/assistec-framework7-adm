@@ -21,36 +21,41 @@
 
 <div class="page" data-page="listaAssistenciaTemplatePage">
     <div class="page-content infinite-scroll">
-        <div class="content-block-title">Lista de Assistências</div>
-        <div class="content-block small-right">Vizualizando {{#if count}}{{count}}{{/if}}
-            de {{#if total}}{{total}}{{/if}}
-        </div>
-        <div class="list-block tablet-inset">
-            <ul id="idListaAssistencia">
-                <!-- Iterate through frontend languages -->
-                {{#each supports}}
-                    <li class="swipeout">
-                        <div class="swipeout-content item-content">
-                            <div class="item-inner">
-                                <div class="item-title">{{nome}}</div>
-                                <div class="item-after smaller"><< Mais ações</div>
-                            </div>
+        <div class="row">
+            <div class="col-100 tablet-50">
+                <div class="content-block-title">Lista de Assistências</div>
+                <div class="content-block small-right">Vizualizando {{#if count}}{{count}}{{/if}}
+                    de {{#if total}}{{total}}{{/if}}
+                </div>
+                <div class="list-block tablet-inset">
+                    <ul id="idListaAssistencia">
+                        <!-- Iterate through frontend languages -->
+                        {{#each supports}}
+                        <li class="swipeout">
+                            <div class="swipeout-content item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">{{nome}}</div>
+                                    <div class="item-after smaller"><< Mais ações</div>
+                                </div>
 
-                        </div>
-                        <div class="swipeout-actions-right">
-                            <a href="html/pages/formAssistenciaTemplate.html?item={{id}}"
-                               class="action1 bg-lightblue">Editar</a>
-                            <!-- We add data-confirm and data-confirm-title attributes -->
-                            <a href="#" name="{{id}}" class="swipeout-delete"
-                               data-confirm="Realmente deseja remover {{nome}}?"
-                               data-confirm-title="Atenção">Remover</a>
-                        </div>
-                    </li>
-                {{else}}
-                    <li>Sem Registros</li>
-                {{/each}}
-            </ul>
+                            </div>
+                            <div class="swipeout-actions-right">
+                                <a href="html/pages/formAssistenciaTemplate.html?item={{id}}"
+                                   class="action1 bg-lightblue">Editar</a>
+                                <!-- We add data-confirm and data-confirm-title attributes -->
+                                <a href="#" name="{{id}}" class="swipeout-delete"
+                                   data-confirm="Realmente deseja remover {{nome}}?"
+                                   data-confirm-title="Atenção">Remover</a>
+                            </div>
+                        </li>
+                        {{else}}
+                        <li>Sem Registros</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
         </div>
+
         <!-- Preloader -->
         <div class="infinite-scroll-preloader">
             <div class="preloader"></div>
