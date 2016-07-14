@@ -21,6 +21,8 @@ MyApp.angular.factory('formAssistenciaService', [
                     if (item.id==page.query.item){
                         // And insert generated list to page content
                         $$(page.container).find('#id').val(item.id);
+                        if (item.patrocinado) $$("#patrocinado").prop("checked", true);
+                        else $$("#patrocinado").prop("checked", false);
                         $$(page.container).find('#nome').val(item.nome);
                         $$(page.container).find('#descricao').val(item.descricao);
                         $$(page.container).find('#email').val(item.email);
@@ -50,6 +52,7 @@ MyApp.angular.factory('formAssistenciaService', [
                 if (MyApp.validate()){
                     MyApp.fw7.app.showIndicator();
                     DataService.createSupport({
+                        patrocinado:$$("#patrocinado").prop("checked"),
                         nome:$$(page.container).find('#nome').val(),
                         descricao:$$(page.container).find('#descricao').val(),
                         email:$$(page.container).find('#email').val(),
@@ -83,9 +86,11 @@ MyApp.angular.factory('formAssistenciaService', [
                     DataService.supports.forEach(function (item) {
                         if (item.id==$$(page.container).find('#id').val()){
                             MyApp.fw7.app.showIndicator();
+                            //console.log($$('#patrocinado').val());
+                            //console.log($$('#patrocinado').prop("checked"));
+                            //console.log($$('#patrocinado').checked());
                             DataService.updateSupport($$(page.container).find('#id').val(), {
-                                //id:$$(page.container).find('#id').val(),
-                                //cidade_id:1,
+                                patrocinado:$$("#patrocinado").prop("checked"),
                                 nome:$$(page.container).find('#nome').val(),
                                 descricao:$$(page.container).find('#descricao').val(),
                                 email:$$(page.container).find('#email').val(),

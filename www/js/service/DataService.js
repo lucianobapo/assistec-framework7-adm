@@ -36,7 +36,7 @@ MyApp.angular.factory('DataService', ['$document', '$http', function ($document,
             data: data,
             url: url
         };
-        //MyApp.cDebug('params:', params);
+        MyApp.cDebug('params:', params);
         return $http(params);
     }
 

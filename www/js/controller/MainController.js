@@ -15,7 +15,7 @@ MyApp.angular.controller('MainController', [
         });
 
         MyApp.fw7.app.onPageInit('formAssistenciaTemplatePage', function (page) {
-            MyApp.cDebug('onPageInit formAssistenciaTemplatePage');
+            MyApp.cLog('onPageInit formAssistenciaTemplatePage');
             formAssistenciaService.onPageInit(page);
         });
 
