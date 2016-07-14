@@ -10,6 +10,7 @@ MyApp.angular.factory('DataService', ['$document', '$http', function ($document,
         'ready': []
     };
 
+    pub.supportToDelete = 0;
     pub.supports = [];
     pub.cities = [];
 
@@ -39,6 +40,10 @@ MyApp.angular.factory('DataService', ['$document', '$http', function ($document,
         //MyApp.cDebug('params:', params);
         return $http(params);
     }
+
+    pub.deleteSupport = function () {
+        return sendHttp('DELETE', 'http://assistec.ilhanet.com/servico/'+pub.supportToDelete);
+    };
 
     pub.updateSupport = function (id, data) {
         return sendHttp('PUT', 'http://assistec.ilhanet.com/servico/'+id, data);

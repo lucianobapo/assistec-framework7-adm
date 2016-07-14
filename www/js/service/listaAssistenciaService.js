@@ -61,6 +61,22 @@ MyApp.angular.factory('listaAssistenciaService', [
                         MyApp.cErr('Request Error', err);
                     });
             });
+
+            $$('.swipeout').on('delete', function (e) {
+                MyApp.fw7.app.showIndicator();
+                if (DataService.supportToDelete>0)
+                    DataService.deleteSupport().then(function (result){
+                        MyApp.cLog('Success:', result);
+                        MyApp.fw7.app.hideIndicator();
+                        pub.loadPage();
+                    }, function (err){
+                        MyApp.cErr('Request Error', err);
+                    });
+            });
+
+            $$('.swipeout-delete').on('click', function (e) {
+                DataService.supportToDelete = e.target.name;
+            });
         };
 
         pub.loadPage = function () {
