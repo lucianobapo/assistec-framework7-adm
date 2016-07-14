@@ -5,6 +5,7 @@
 !/docs
 !/config.xml
 !/README.md
+!/readme.md
 !/LICENSE.md
 !/intelxdk.config.additions.xml
 !/*.xdk
