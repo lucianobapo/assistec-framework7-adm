@@ -6,7 +6,7 @@
                 <!--<span>Home</span>-->
             <!--</a>-->
         </div>
-        <div class="center sliding">Lista de Assistências</div>
+        <div class="center sliding">Lista de Cidades</div>
         <div class="right">
             <!--<a href="#" class="open-panel link icon-only">-->
                 <!--<i class="icon icon-bars"></i>-->
@@ -15,16 +15,16 @@
     </div>
 </div>
 
-<div class="page" data-page="listaAssistenciaTemplatePage">
+<div class="page" data-page="listaCidadesTemplatePage">
     <div class="page-content infinite-scroll">
-        <div class="content-block-title">Lista de Assistências</div>
+        <div class="content-block-title">Lista de Cidades</div>
         <div class="content-block small-right">Vizualizando {{#if count}}{{count}}{{/if}}
             de {{#if total}}{{total}}{{/if}}
         </div>
         <div class="list-block tablet-inset">
-            <ul id="idListaAssistencia">
+            <ul>
                 <!-- Iterate through frontend languages -->
-                {{#each supports}}
+                {{#each cities}}
                     <li class="swipeout">
                         <div class="swipeout-content item-content">
                             <div class="item-inner">

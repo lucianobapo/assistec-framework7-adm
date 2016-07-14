@@ -10,6 +10,9 @@ MyApp.angular.factory('DataService', ['$document', '$http', function ($document,
         'ready': []
     };
 
+    pub.supports = [];
+    pub.cities = [];
+
     pub.addEventListener = function (eventName, listener) {
         eventListeners[eventName].push(listener);
     };
@@ -26,8 +29,8 @@ MyApp.angular.factory('DataService', ['$document', '$http', function ($document,
         var params = {
             headers: {
                 //'X-Requested-With': 'XMLHttpRequest',
+                //'Accept': 'application/json',
                 'Content-Type': 'application/json'
-                //'Accept': 'application/json'
             },
             method: method,
             data: data,
@@ -36,6 +39,10 @@ MyApp.angular.factory('DataService', ['$document', '$http', function ($document,
         //MyApp.cDebug('params:', params);
         return $http(params);
     }
+
+    pub.updateSupport = function (id, data) {
+        return sendHttp('PUT', 'http://assistec.ilhanet.com/servico/'+id, data);
+    };
 
     pub.postSupport = function (data) {
         return sendHttp('POST', 'http://assistec.ilhanet.com/servico', data);
