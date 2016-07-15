@@ -5,7 +5,7 @@ php -S localhost:8000 -t www/
 
 ALTER TABLE `servico` ADD `cidade` VARCHAR(128) NULL DEFAULT NULL AFTER `fabricantes`;
 ALTER TABLE `servico` ADD `estado` VARCHAR(128) NULL DEFAULT NULL AFTER `cidade`;
-ALTER TABLE `servico` ADD `patrocinado` BOOLEAN NULL DEFAULT NULL AFTER `estado`;
+ALTER TABLE `servico` ADD `perfil` VARCHAR(50) NOT NULL DEFAULT 'gratuito' AFTER `estado`;
 
 CREATE FUNCTION returnCidade (cidadeId int(11))
 RETURNS VARCHAR(128) DETERMINISTIC

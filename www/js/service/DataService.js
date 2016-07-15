@@ -45,7 +45,7 @@ MyApp.angular.factory('DataService', ['$document', '$http', function ($document,
     };
 
     pub.updateSupport = function (id, data) {
-        return sendHttp('PUT', 'http://assistec.ilhanet.com/servico/'+id, data);
+        return sendHttp('PATCH', 'http://assistec.ilhanet.com/servico/'+id, data);
     };
 
     pub.createSupport = function (data) {
