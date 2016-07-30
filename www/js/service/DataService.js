@@ -40,8 +40,8 @@ MyApp.angular.factory('DataService', ['$document', '$http', function ($document,
         return $http(params);
     }
 
-    //var urlBase = 'http://assistec.ilhanet.com';
-    var urlBase = 'http://localhost:8888';
+    var urlBase = 'http://assistec.ilhanet.com';
+    //var urlBase = 'http://localhost:8888';
 
     pub.deleteSupport = function () {
         return sendHttp('DELETE', urlBase+'/servico/'+pub.supportToDelete);

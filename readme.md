@@ -2,7 +2,7 @@
 ```shell
 php -S localhost:8000 -t www/
 ```
-https://s3.amazonaws.com/delivery-images/campanhas/campanha-face4-compressed.png
+
 
 ALTER TABLE `servico` ADD `cidade` VARCHAR(128) NULL DEFAULT NULL AFTER `fabricantes`;
 ALTER TABLE `servico` ADD `estado` VARCHAR(128) NULL DEFAULT NULL AFTER `cidade`;
