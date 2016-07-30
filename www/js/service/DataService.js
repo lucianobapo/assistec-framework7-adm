@@ -40,20 +40,23 @@ MyApp.angular.factory('DataService', ['$document', '$http', function ($document,
         return $http(params);
     }
 
+    //var urlBase = 'http://assistec.ilhanet.com';
+    var urlBase = 'http://localhost:8888';
+
     pub.deleteSupport = function () {
-        return sendHttp('DELETE', 'http://assistec.ilhanet.com/servico/'+pub.supportToDelete);
+        return sendHttp('DELETE', urlBase+'/servico/'+pub.supportToDelete);
     };
 
     pub.updateSupport = function (id, data) {
-        return sendHttp('PATCH', 'http://assistec.ilhanet.com/servico/'+id, data);
+        return sendHttp('PATCH', urlBase+'/servico/'+id, data);
     };
 
     pub.createSupport = function (data) {
-        return sendHttp('POST', 'http://assistec.ilhanet.com/servico', data);
+        return sendHttp('POST', urlBase+'/servico', data);
     };
 
     pub.getSupports = function (url) {
-        if (url == undefined) url = 'http://assistec.ilhanet.com/servico';
+        if (url == undefined) url = urlBase+'/servico';
         return sendHttp('GET', url);
     };
 

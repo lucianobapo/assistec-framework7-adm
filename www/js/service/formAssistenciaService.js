@@ -14,6 +14,8 @@ MyApp.angular.factory('formAssistenciaService', [
         MyApp.getFormAssistenciaData = function () {
             var data = {
                 perfil:$$("#perfil").val(),
+                fotoLogo:$$('#fotoLogo').val(),
+                fotoCapa:$$('#fotoCapa').val(),
                 nome:$$('#nome').val(),
                 descricao:$$('#descricao').val(),
                 email:$$('#email').val(),
@@ -91,6 +93,8 @@ MyApp.angular.factory('formAssistenciaService', [
                         // And insert generated list to page content
                         $$(page.container).find('#id').val(item.id);
                         $$(page.container).find('#perfil').val(item.perfil);
+                        $$(page.container).find('#fotoLogo').val(item.fotoLogo);
+                        $$(page.container).find('#fotoCapa').val(item.fotoCapa);
                         $$(page.container).find('#nome').val(item.nome);
                         $$(page.container).find('#descricao').val(item.descricao);
                         $$(page.container).find('#email').val(item.email);
