@@ -40,7 +40,8 @@ MyApp.angular.factory('DataService', ['$document', '$http', function ($document,
         return $http(params);
     }
 
-    var urlBase = 'http://guiaassistenciatecnica.com/assistec-apigility/public';
+    var urlBase = 'http://app.guiaassistenciatecnica.com';
+    // var urlBase = 'http://guiaassistenciatecnica.com/assistec-apigility/public';
     //var urlBase = 'http://assistec.ilhanet.com';
     //var urlBase = 'http://localhost:8888';
 

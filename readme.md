@@ -1,6 +1,10 @@
 #comandos
 ```shell
 php -S localhost:8000 -t www/
+
+ssh guiaassistenciat@216.172.172.178 -p2222 -i /home/luciano/.ssh/id_ed25519-cert  -o 'IdentitiesOnly yes'
+
+rsync -rvztPhe "ssh guiaassistenciat@216.172.172.178 -p2222 -i /home/luciano/.ssh/id_ed25519-cert" .env.production testesdivertidos.com:/home/testesdivertidos/funny-joke/.env
 ```
 
 
